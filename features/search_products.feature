@@ -6,5 +6,5 @@ Feature: Search products
     Given I open Aliexpress page
     When I search for "instax mini"
     And I navigate to 2nd page
-    And I click on the 2nd item in the list
+    And I preview the details of the 2nd item in the list
     Then I see at least 1 item to buy
