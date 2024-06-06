@@ -1,4 +1,4 @@
-import logging
+from features.logs_utils import adding_log
 from selenium.webdriver.common.by import By
 from features.pages.base_page import BasePage
 
@@ -17,7 +17,7 @@ class MenuPage(BasePage):
         search_field.send_keys(product_name)
         search_button = self.driver.find_element(*self.search_button)
         search_button.click()
-        logging.info("Searching results for '{}' product".format(product_name))
+        adding_log("Searching results for '{}' product".format(product_name))
 
     def click_search_field(self):
         search_field = self.driver.find_element(*self.search_field)
