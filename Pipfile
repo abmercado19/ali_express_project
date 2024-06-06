@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 selenium = "*"
 behave = "*"
+allure-behave = "*"
+allure-python-commons = "*"
 
 [dev-packages]
 

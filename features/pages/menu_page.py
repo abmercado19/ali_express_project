@@ -19,5 +19,9 @@ class MenuPage(BasePage):
         search_button.click()
         logging.info("Searching results for '{}' product".format(product_name))
 
+    def click_search_field(self):
+        search_field = self.driver.find_element(*self.search_field)
+        search_field.click()
+
 
 

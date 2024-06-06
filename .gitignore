@@ -1,3 +1,8 @@
 
+# Allure results and screenshots
+allure-results/
+screenshots/
+
+#Others
 .DS_Store
 .idea
