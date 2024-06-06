@@ -2,6 +2,7 @@ import os
 import logging
 import allure
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from allure_commons.types import AttachmentType
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -13,7 +14,11 @@ def before_all(context):
 
 def before_scenario(context, scenario):
     logging.info("Running Scenario: {}".format(scenario.name))
-    driver = webdriver.Chrome()
+    options = Options()
+    if 'headless' in context.config.userdata and context.config.userdata['headless'].lower() == 'true':
+        options.add_argument("--headless")
+        options.add_argument("--window-size=1300,900")
+    driver = webdriver.Chrome(options=options)
     context.driver = driver
 
 

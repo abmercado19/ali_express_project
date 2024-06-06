@@ -3,6 +3,7 @@ from features.pages.product_details_page import ProductDetailsPage
 
 
 @then("I see at least {items_quantity} item to buy")
+@then("I see at least {items_quantity} items to buy")
 def verify_there_are_available_items(context, items_quantity):
     """
     :param context: behave.runner.Context
