@@ -7,4 +7,4 @@ Feature: Search products
     When I search for "instax mini"
     And I navigate to 2nd page
     And I preview the details of the 2nd item in the list
-    #Then I see at least 1 item to buy
+    Then I see at least 1 item to buy
