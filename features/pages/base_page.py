@@ -1,4 +1,4 @@
-import logging
+from features.logs_utils import adding_log
 from selenium.webdriver.common.by import By
 
 
@@ -8,18 +8,18 @@ class BasePage:
                                        + xpath_lower_text + ",'notificaciones')]]//following-sibling::img")
 
     def __init__(self, driver):
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         self.driver = driver
 
     def open_aliexpress_page(self):
         self.driver.get("https://www.aliexpress.com/")
+        adding_log("Aliexpress page was opened")
 
     def close_suscription_popup_if_present(self):
         try:
             close_button = self.driver.find_element(*self.subscription_popup_close_button)
             close_button.click()
-            logging.info("Subscription popup was closed.")
+            adding_log("Subscription popup was closed.")
         except:
-            logging.info("Subscription popup is not displayed.")
+            adding_log("Subscription popup is not displayed.")
 
 
